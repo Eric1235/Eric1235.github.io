@@ -25,7 +25,7 @@ java知识补充，ConCurrentSkipListmap的学习。其优点有两个：key是�
 11月2日 天气:阴
 java知识补充，ConCurrentSkipListmap的学习。其优点有两个：key是有序的；支持更高的并发量。存取时间为log(N)，与线程数无关。线程数越多，越体现它的优势。
 如果安装的时候报了这个错误： INSTALL_PARSE_FAILED_MANIFEST_MALFORMED 。 可以去检查一下配置清单文件有没有什么错误。比如包名路径那些，拒绝大">
-<meta property="og:updated_time" content="2016-11-11T08:29:26.000Z">
+<meta property="og:updated_time" content="2016-11-11T08:49:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="11月工作笔记">
 <meta name="twitter:description" content="天气很好
@@ -121,6 +121,7 @@ java知识补充，ConCurrentSkipListmap的学习。其优点有两个：key是�
 <li>如果安装的时候报了这个错误： INSTALL_PARSE_FAILED_MANIFEST_MALFORMED 。 可以去检查一下配置清单文件有没有什么错误。比如包名路径那些，拒绝大写。Service中去掉android:process。</li>
 <li>Android中的GUID的意义：通过唯一标识，可以对软件的使用情况进行上报。快速进行bug的定位，哪种机型不行，哪些机子经常出bug等。组成的有IMEI，androidid，mac，iccid，手机型号，品牌，操作系统等信息。</li>
 </ul>
+<a id="more"></a>
 <h3 id="11月3日-天气-阴"><a href="#11月3日-天气-阴" class="headerlink" title="11月3日 天气:阴"></a>11月3日 天气:阴</h3><ul>
 <li>知道了一个token过期的处理方式。页面一定要采取一种统一的报token过期的处理方式。我们目前能处理的就是js弹框。拦截js弹框，去处理token过期。当token过期的时候，弹得js符合我们的协议的话，我们就拦截，然后调用原始的方法，返回登录界面。目前的问题就是，有人的处理方式是不一样的，他们直接返回的静态的html页面告诉用户token过去，握草，我没法解决。</li>
 <li><p>单一职责原则和开放封闭原则的实际小demo使用。一个类里面可能承载的功能是有点太多。比如要去写一个图片下载，ImageDownloader里面，第一版的时候是承载了下载，缓存的功能，违反了类的单一职责原则。正确的改法就是去抽离出一个缓存类。抽离出缓存的时候，问题又来了，缓存策略又被写死了，只能使用内存缓存。这样也不行，又得抽缓存策略出来。这时就得去依赖抽象了。暴露出接口，不同的策略去实现不同的东西。然后给个接口，去注入不同的缓存实现就好了。</p>
@@ -272,11 +273,7 @@ java知识补充，ConCurrentSkipListmap的学习。其优点有两个：key是�
 			
 		
 			
-				<li><a href="/tags/improve/" title="improve">improve<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/work-coding/" title="-work -coding">-work -coding<sup>1</sup></a></li>
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
 			
 		
 			
@@ -284,19 +281,23 @@ java知识补充，ConCurrentSkipListmap的学习。其优点有两个：key是�
 			
 		
 			
+				<li><a href="/tags/improve/" title="improve">improve<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/coding-android/" title="coding android">coding android<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
+				<li><a href="/tags/work-life/" title="-work -life">-work -life<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/work-coding/" title="-work -coding">-work -coding<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/fight/" title="fight">fight<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/work-life/" title="-work -life">-work -life<sup>1</sup></a></li>
 			
 		
 			
