@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/05/30/Coding/Android/安卓运行时权限/index.html">
 <meta property="og:site_name" content="Eric's Blog">
 <meta property="og:description" content="#安卓6.0运行时申请权限介绍">
-<meta property="og:updated_time" content="2016-05-30T12:21:01.000Z">
+<meta property="og:updated_time" content="2016-11-11T08:52:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安卓6.0运行时申请权限介绍">
 <meta name="twitter:description" content="#安卓6.0运行时申请权限介绍">
@@ -115,7 +115,7 @@
 <p>可以从方法名<code>requestPermissions</code>以及第二个参数看出，是支持一次性申请多个权限的，系统会通过对话框逐一询问用户是否授权。</p>
 <p>4.处理权限申请回调<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode,</span></span></div><div class="line">        String permissions[], <span class="keyword">int</span>[] grantResults) &#123;</div><div class="line">    <span class="keyword">switch</span> (requestCode) &#123;</div><div class="line">        <span class="keyword">case</span> MY_PERMISSIONS_REQUEST_READ_CONTACTS: &#123;</div><div class="line">            <span class="comment">// If request is cancelled, the result arrays are empty.</span></div><div class="line">            <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span></div><div class="line">                &amp;&amp; grantResults[<span class="number">0</span>] == PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line"></div><div class="line">                <span class="comment">// permission was granted, yay! Do the</span></div><div class="line">                <span class="comment">// contacts-related task you need to do.</span></div><div class="line"></div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line"></div><div class="line">                <span class="comment">// permission denied, boo! Disable the</span></div><div class="line">                <span class="comment">// functionality that depends on this permission.</span></div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>ok，对于权限的申请结果，首先验证requestCode定位到你的申请，然后验证grantResults对应于申请的结果，这里的数组对应于申请时的第二个权限字符串数组。如果你同时申请两个权限，那么grantResults的length就为2，分别记录你两个权限的申请结果。如果申请成功，就可以做你的事情了~</p>
-<p>还有一个api要介绍，就是在用户已经拒绝过一次该权限申请以后，你要给用户一个解释。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Should we show an explanation?</span></div><div class="line"><span class="keyword">if</span> (ActivityCompat.shouldShowRequestPermissionRationale(thisActivity,</div><div class="line">        Manifest.permission.READ_CONTACTS)) </div><div class="line">    <span class="comment">// Show an expanation to the user *asynchronously* -- don't block</span></div><div class="line">    <span class="comment">// this thread waiting for the user's response! After the user</span></div><div class="line">    <span class="comment">// sees the explanation, try again to request the permission.</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>还有一个api要介绍，就是在用户已经拒绝过一次该权限申请以后，你要给用户一个解释。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Should we show an explanation?</span></div><div class="line"><span class="keyword">if</span> (ActivityCompat.shouldShowRequestPermissionRationale(thisActivity,</div><div class="line">        Manifest.permission.READ_CONTACTS))</div><div class="line">    <span class="comment">// Show an expanation to the user *asynchronously* -- don't block</span></div><div class="line">    <span class="comment">// this thread waiting for the user's response! After the user</span></div><div class="line">    <span class="comment">// sees the explanation, try again to request the permission.</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>这样，整个App申请权限的步骤就走完了。</p>
   
 	</div>
@@ -125,7 +125,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/coding-android/">coding android</a>
+  <span></span> <a href="/tags/coding/">coding</a><a href="/tags/android/">android</a>
   </div>
 
 </div>
@@ -204,19 +204,15 @@
 			
 		
 			
+				<li><a href="/tags/work/" title="work">work<sup>5</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/college/" title="college">college<sup>5</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/work/" title="work">work<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/coding/" title="coding">coding<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
+				<li><a href="/tags/coding/" title="coding">coding<sup>4</sup></a></li>
 			
 		
 			
@@ -228,7 +224,7 @@
 			
 		
 			
-				<li><a href="/tags/coding-android/" title="coding android">coding android<sup>1</sup></a></li>
+				<li><a href="/tags/android/" title="android">android<sup>1</sup></a></li>
 			
 		
 			
@@ -236,7 +232,7 @@
 			
 		
 			
-				<li><a href="/tags/work-coding/" title="-work -coding">-work -coding<sup>1</sup></a></li>
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
 			
 		
 			
