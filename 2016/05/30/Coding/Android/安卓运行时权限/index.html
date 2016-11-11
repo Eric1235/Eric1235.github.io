@@ -1,0 +1,533 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>安卓6.0运行时申请权限介绍 | Eric&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Eric Li">
+    
+
+    
+    <meta name="description" content="#安卓6.0运行时申请权限介绍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安卓6.0运行时申请权限介绍">
+<meta property="og:url" content="http://yoursite.com/2016/05/30/Coding/Android/安卓运行时权限/index.html">
+<meta property="og:site_name" content="Eric's Blog">
+<meta property="og:description" content="#安卓6.0运行时申请权限介绍">
+<meta property="og:updated_time" content="2016-05-30T12:21:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="安卓6.0运行时申请权限介绍">
+<meta name="twitter:description" content="#安卓6.0运行时申请权限介绍">
+<meta name="twitter:creator" content="@https://twitter.com/ericli1235">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Eric&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Eric&#39;s Blog" title="Eric&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Eric&#39;s Blog">Eric&#39;s Blog</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/05/30/Coding/Android/安卓运行时权限/" title="安卓6.0运行时申请权限介绍" itemprop="url">安卓6.0运行时申请权限介绍</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Eric Li" target="_blank" itemprop="author">Eric Li</a>
+		
+  <p class="article-time">
+    <time datetime="2016-05-30T05:08:43.000Z" itemprop="datePublished"> 发表于 2016-05-30</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			
+		
+		</div>
+		
+		<p>#安卓6.0运行时申请权限介绍</p>
+<a id="more"></a>
+<p>##危险权限<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">group:android.permission-group.CONTACTS</div><div class="line">  permission:android.permission.WRITE_CONTACTS</div><div class="line">  permission:android.permission.GET_ACCOUNTS</div><div class="line">  permission:android.permission.READ_CONTACTS</div><div class="line"></div><div class="line">group:android.permission-group.PHONE</div><div class="line">  permission:android.permission.READ_CALL_LOG</div><div class="line">  permission:android.permission.READ_PHONE_STATE</div><div class="line">  permission:android.permission.CALL_PHONE</div><div class="line">  permission:android.permission.WRITE_CALL_LOG</div><div class="line">  permission:android.permission.USE_SIP</div><div class="line">  permission:android.permission.PROCESS_OUTGOING_CALLS</div><div class="line">  permission:com.android.voicemail.permission.ADD_VOICEMAIL</div><div class="line"></div><div class="line">group:android.permission-group.CALENDAR</div><div class="line">  permission:android.permission.READ_CALENDAR</div><div class="line">  permission:android.permission.WRITE_CALENDAR</div><div class="line"></div><div class="line">group:android.permission-group.CAMERA</div><div class="line">  permission:android.permission.CAMERA</div><div class="line"></div><div class="line">group:android.permission-group.SENSORS</div><div class="line">  permission:android.permission.BODY_SENSORS</div><div class="line"></div><div class="line">group:android.permission-group.LOCATION</div><div class="line">  permission:android.permission.ACCESS_FINE_LOCATION</div><div class="line">  permission:android.permission.ACCESS_COARSE_LOCATION</div><div class="line"></div><div class="line">group:android.permission-group.STORAGE</div><div class="line">  permission:android.permission.READ_EXTERNAL_STORAGE</div><div class="line">  permission:android.permission.WRITE_EXTERNAL_STORAGE</div><div class="line"></div><div class="line">group:android.permission-group.MICROPHONE</div><div class="line">  permission:android.permission.RECORD_AUDIO</div><div class="line"></div><div class="line">group:android.permission-group.SMS</div><div class="line">  permission:android.permission.READ_SMS</div><div class="line">  permission:android.permission.RECEIVE_WAP_PUSH</div><div class="line">  permission:android.permission.RECEIVE_MMS</div><div class="line">  permission:android.permission.RECEIVE_SMS</div><div class="line">  permission:android.permission.SEND_SMS</div><div class="line">  permission:android.permission.READ_CELL_BROADCASTS</div></pre></td></tr></table></figure></p>
+<p>##普通权限<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">ACCESS_LOCATION_EXTRA_COMMANDS</div><div class="line">ACCESS_NETWORK_STATE</div><div class="line">ACCESS_NOTIFICATION_POLICY</div><div class="line">ACCESS_WIFI_STATE</div><div class="line">BLUETOOTH</div><div class="line">BLUETOOTH_ADMIN</div><div class="line">BROADCAST_STICKY</div><div class="line">CHANGE_NETWORK_STATE</div><div class="line">CHANGE_WIFI_MULTICAST_STATE</div><div class="line">CHANGE_WIFI_STATE</div><div class="line">DISABLE_KEYGUARD</div><div class="line">EXPAND_STATUS_BAR</div><div class="line">GET_PACKAGE_SIZE</div><div class="line">INSTALL_SHORTCUT</div><div class="line">INTERNET</div><div class="line">KILL_BACKGROUND_PROCESSES</div><div class="line">MODIFY_AUDIO_SETTINGS</div><div class="line">NFC</div><div class="line">READ_SYNC_SETTINGS</div><div class="line">READ_SYNC_STATS</div><div class="line">RECEIVE_BOOT_COMPLETED</div><div class="line">REORDER_TASKS</div><div class="line">REQUEST_INSTALL_PACKAGES</div><div class="line">SET_ALARM</div><div class="line">SET_TIME_ZONE</div><div class="line">SET_WALLPAPER</div><div class="line">SET_WALLPAPER_HINTS</div><div class="line">TRANSMIT_IR</div><div class="line">UNINSTALL_SHORTCUT</div><div class="line">USE_FINGERPRINT</div><div class="line">VIBRATE</div><div class="line">WAKE_LOCK</div><div class="line">WRITE_SYNC_SETTINGS</div></pre></td></tr></table></figure></p>
+<p>可以通过adb shell pm list permissions -d -g进行查看。</p>
+<p>##相关api介绍<br>1.申请权限，和之前的步骤一样</p>
+<p>2.检查权限<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (ContextCompat.checkSelfPermission(thisActivity,</div><div class="line">                Manifest.permission.READ_CONTACTS)</div><div class="line">        != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里涉及到一个API，ContextCompat.checkSelfPermission，主要用于检测某个权限是否已经被授予，方法返回值</p>
+<p>为<code>PackageManager.PERMISSION_DENIED</code>或者<code>PackageManager.PERMISSION_GRANTED</code>。当返回DENIED就需要进行申请授权了。</p>
+<p>3.申请权限<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ActivityCompat.requestPermissions(thisActivity,</div><div class="line">                <span class="keyword">new</span> String[]&#123;Manifest.permission.READ_CONTACTS&#125;,</div><div class="line">                MY_PERMISSIONS_REQUEST_READ_CONTACTS);</div></pre></td></tr></table></figure></p>
+<p>该方法是异步的，第一个参数是Context；第二个参数是需要申请的权限的字符串数组；第三个参数为requestCode，主要用于回调的时候检测。</p>
+<p>可以从方法名<code>requestPermissions</code>以及第二个参数看出，是支持一次性申请多个权限的，系统会通过对话框逐一询问用户是否授权。</p>
+<p>4.处理权限申请回调<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode,</span></span></div><div class="line">        String permissions[], <span class="keyword">int</span>[] grantResults) &#123;</div><div class="line">    <span class="keyword">switch</span> (requestCode) &#123;</div><div class="line">        <span class="keyword">case</span> MY_PERMISSIONS_REQUEST_READ_CONTACTS: &#123;</div><div class="line">            <span class="comment">// If request is cancelled, the result arrays are empty.</span></div><div class="line">            <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span></div><div class="line">                &amp;&amp; grantResults[<span class="number">0</span>] == PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line"></div><div class="line">                <span class="comment">// permission was granted, yay! Do the</span></div><div class="line">                <span class="comment">// contacts-related task you need to do.</span></div><div class="line"></div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line"></div><div class="line">                <span class="comment">// permission denied, boo! Disable the</span></div><div class="line">                <span class="comment">// functionality that depends on this permission.</span></div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>ok，对于权限的申请结果，首先验证requestCode定位到你的申请，然后验证grantResults对应于申请的结果，这里的数组对应于申请时的第二个权限字符串数组。如果你同时申请两个权限，那么grantResults的length就为2，分别记录你两个权限的申请结果。如果申请成功，就可以做你的事情了~</p>
+<p>还有一个api要介绍，就是在用户已经拒绝过一次该权限申请以后，你要给用户一个解释。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Should we show an explanation?</span></div><div class="line"><span class="keyword">if</span> (ActivityCompat.shouldShowRequestPermissionRationale(thisActivity,</div><div class="line">        Manifest.permission.READ_CONTACTS)) </div><div class="line">    <span class="comment">// Show an expanation to the user *asynchronously* -- don't block</span></div><div class="line">    <span class="comment">// this thread waiting for the user's response! After the user</span></div><div class="line">    <span class="comment">// sees the explanation, try again to request the permission.</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样，整个App申请权限的步骤就走完了。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/coding-android/">coding android</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2016/05/30/Coding/Android/安卓运行时权限/" data-title="安卓6.0运行时申请权限介绍 | Eric&#39;s Blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/05/31/2016/别把意外想得太远了哦/" title="别把意外想得太远了哦">
+  <strong>上一篇：</strong><br/>
+  <span>
+  别把意外想得太远了哦</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/05/30/my university/2016/travel/2016-in-HaiNan/"  title="2016 in HaiNan">
+ <strong>下一篇：</strong><br/> 
+ <span>2016 in HaiNan
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ 
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="github-card">
+<p class="asidetitle">Github 名片</p>
+<div class="github-card" data-github="https://github.com/Eric1235" data-width="220" data-height="119" data-theme="medium">
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+  </div>
+
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/life/" title="life">life<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/college/" title="college">college<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/work/" title="work">work<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/coding/" title="coding">coding<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/improve/" title="improve">improve<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/work-coding/" title="-work -coding">-work -coding<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/me/" title="me">me<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/coding-android/" title="coding android">coding android<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/fight/" title="fight">fight<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/work-life/" title="-work -life">-work -life<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sunshine/" title="sunshine">sunshine<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Be Fearless <br/>
+			Be an Engineer</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/https://github.com/Eric1235" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		<a href="https://twitter.com/https://twitter.com/ericli1235" target="_blank" class="icon-twitter" title="twitter"></a>
+		
+		
+		<a href="https://www.facebook.com/https://www.facebook.com/lixinkun" target="_blank" class="icon-facebook" title="facebook"></a>
+		
+		
+		
+		
+		
+		
+		<a href="mailto:Eric1235@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Eric Li">Eric Li</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

@@ -4,19 +4,35 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Eric&#39;s Blog</title>
+    <title>11月工作笔记 | Eric&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Eric Li">
     
 
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Eric's Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+    <meta name="description" content="天气很好
+
+11月2日 天气:阴
+java知识补充，ConCurrentSkipListmap的学习。其优点有两个：key是有序的；支持更高的并发量。存取时间为log(N)，与线程数无关。线程数越多，越体现它的优势。
+如果安装的时候报了这个错误： INSTALL_PARSE_FAILED_MANIFEST_MALFORMED 。 可以去检查一下配置清单文件有没有什么错误。比如包名路径那些，拒绝大">
+<meta property="og:type" content="article">
+<meta property="og:title" content="11月工作笔记">
+<meta property="og:url" content="http://yoursite.com/2016/11/11/Coding/11月工作笔记/index.html">
 <meta property="og:site_name" content="Eric's Blog">
+<meta property="og:description" content="天气很好
+
+11月2日 天气:阴
+java知识补充，ConCurrentSkipListmap的学习。其优点有两个：key是有序的；支持更高的并发量。存取时间为log(N)，与线程数无关。线程数越多，越体现它的优势。
+如果安装的时候报了这个错误： INSTALL_PARSE_FAILED_MANIFEST_MALFORMED 。 可以去检查一下配置清单文件有没有什么错误。比如包名路径那些，拒绝大">
+<meta property="og:updated_time" content="2016-11-11T08:29:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eric's Blog">
+<meta name="twitter:title" content="11月工作笔记">
+<meta name="twitter:description" content="天气很好
+
+11月2日 天气:阴
+java知识补充，ConCurrentSkipListmap的学习。其优点有两个：key是有序的；支持更高的并发量。存取时间为log(N)，与线程数无关。线程数越多，越体现它的优势。
+如果安装的时候报了这个错误： INSTALL_PARSE_FAILED_MANIFEST_MALFORMED 。 可以去检查一下配置清单文件有没有什么错误。比如包名路径那些，拒绝大">
 <meta name="twitter:creator" content="@https://twitter.com/ericli1235">
 
     
@@ -71,12 +87,10 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
   <h1 itemprop="name">
     
       <a href="/2016/11/11/Coding/11月工作笔记/" title="11月工作笔记" itemprop="url">11月工作笔记</a>
@@ -90,9 +104,16 @@
     
   </p>
 </header>
-    <div class="article-content">
-        
-        <blockquote>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#11月2日-天气-阴"><span class="toc-number">1.</span> <span class="toc-text">11月2日 天气:阴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11月3日-天气-阴"><span class="toc-number">2.</span> <span class="toc-text">11月3日 天气:阴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11月4日-天气-晴"><span class="toc-number">3.</span> <span class="toc-text">11月4日 天气:晴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11月7日-天气-晴"><span class="toc-number">4.</span> <span class="toc-text">11月7日 天气:晴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11月8日-天气-阴"><span class="toc-number">5.</span> <span class="toc-text">11月8日 天气:阴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11月9日-天气-阴"><span class="toc-number">6.</span> <span class="toc-text">11月9日 天气:阴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11月10日-天气-阴雨"><span class="toc-number">7.</span> <span class="toc-text">11月10日 天气:阴雨</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11月11日-天气-冷"><span class="toc-number">8.</span> <span class="toc-text">11月11日 天气:冷</span></a></li></ol>
+		
+		</div>
+		
+		<blockquote>
 <p>天气很好</p>
 </blockquote>
 <h3 id="11月2日-天气-阴"><a href="#11月2日-天气-阴" class="headerlink" title="11月2日 天气:阴"></a>11月2日 天气:阴</h3><ul>
@@ -160,14 +181,9 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> EToast <span class="title">makeToast</span><span class="params">(Context context, <span class="keyword">int</span> res, <span class="keyword">int</span> hideProxy)</span></span>&#123;</div><div class="line">       String msg = <span class="string">""</span>;</div><div class="line">       msg = context.getResources().getString(res);</div><div class="line">       <span class="keyword">return</span> makeToast(context,msg,hideProxy);</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
 <p>最后，就是到最重要的show方法了。定义两个动画，把布局展示出来，然后在相应的时间后，隐藏布局。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</div><div class="line">       <span class="keyword">if</span>(isShow)&#123;</div><div class="line">           <span class="keyword">return</span>;</div><div class="line">       &#125;</div><div class="line">       isShow = <span class="keyword">true</span>;</div><div class="line">       mFadeInAnimation = <span class="keyword">new</span> AlphaAnimation(<span class="number">0</span>,<span class="number">1</span>);</div><div class="line">       mFadeOutAnimation = <span class="keyword">new</span> AlphaAnimation(<span class="number">1</span>,<span class="number">0</span>);</div><div class="line">       mFadeOutAnimation.setDuration(ANIMATION_DURATION);</div><div class="line">       mFadeOutAnimation.setAnimationListener(<span class="keyword">new</span> Animation.AnimationListener() &#123;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationStart</span><span class="params">(Animation animation)</span> </span>&#123;</div><div class="line">               isShow = <span class="keyword">true</span>;</div><div class="line">           &#125;</div><div class="line"></div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationEnd</span><span class="params">(Animation animation)</span> </span>&#123;</div><div class="line">               mContainer.setVisibility(View.GONE);</div><div class="line">           &#125;</div><div class="line"></div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationRepeat</span><span class="params">(Animation animation)</span> </span>&#123;</div><div class="line"></div><div class="line">           &#125;</div><div class="line">       &#125;);</div><div class="line">       mContainer.setVisibility(View.VISIBLE);</div><div class="line">       mFadeInAnimation.setDuration(ANIMATION_DURATION);</div><div class="line">       mContainer.startAnimation(mFadeInAnimation);</div><div class="line">       mHandler.postDelayed(mHideRunnable,HIDE_DELAY);</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
 <p>使用handler的原因，就是因为这里不是主线程嘛，不能操作界面。</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
+  
+	</div>
+		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 
@@ -180,553 +196,43 @@
 
 
 
-
-<div class="comments-count">
+	<div class="article-share" id="share">
 	
-</div>
+	  <div data-url="http://yoursite.com/2016/11/11/Coding/11月工作笔记/" data-title="11月工作笔记 | Eric&#39;s Blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
 
 </footer>
 
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/10/12/Coding/2016-10工作笔记/2016-10-工作笔记/" title="2016-10-工作笔记" itemprop="url">2016-10-工作笔记</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Eric Li" target="_blank" itemprop="author">Eric Li</a>
-		
-  <p class="article-time">
-    <time datetime="2016-10-12T08:10:09.000Z" itemprop="datePublished"> 发表于 2016-10-12</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <blockquote>
-<p>天气渐凉，注意保暖</p>
-</blockquote>
-<p><code>出游</code> <code>流浪</code></p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/10/12/Coding/2016-10工作笔记/2016-10-工作笔记/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/work/">work</a><a href="/tags/coding/">coding</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
+   	       
+	</article>
 	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/10/12/Coding/2016-10工作笔记/2016-10-工作笔记/"  title="2016-10-工作笔记">
+ <strong>下一篇：</strong><br/> 
+ <span>2016-10-工作笔记
+</span>
+</a>
 </div>
 
-</footer>
+</nav>
 
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/09/14/Coding/2016-9笔记/2016-9笔记/" title="2016-9笔记" itemprop="url">2016-9笔记</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Eric Li" target="_blank" itemprop="author">Eric Li</a>
-		
-  <p class="article-time">
-    <time datetime="2016-09-14T01:56:46.000Z" itemprop="datePublished"> 发表于 2016-09-14</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><code>多事之秋</code> <code>不关我事的开学季</code></p>
-<blockquote>
-<p>感觉情况好了很多，我在一帮老司机的带领下，算是在正确的轨道上面成长</p>
-</blockquote>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/09/14/Coding/2016-9笔记/2016-9笔记/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/work/">work</a><a href="/tags/coding/">coding</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
 	
-</div>
 
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/09/09/Coding/Sql语句复习/" title="巩固印象中的sql" itemprop="url">巩固印象中的sql</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Eric Li" target="_blank" itemprop="author">Eric Li</a>
-		
-  <p class="article-time">
-    <time datetime="2016-09-09T08:16:33.000Z" itemprop="datePublished"> 发表于 2016-09-09</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <blockquote>
-<p>没事，我就是想要温习一下旧的知识，提升自己的内力。</p>
-</blockquote>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/09/09/Coding/Sql语句复习/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/work/">work</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/09/03/2016/寻求改变，才是进步/寻求改变，才是进步/" title="寻求改变，才是进步" itemprop="url">寻求改变，才是进步</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Eric Li" target="_blank" itemprop="author">Eric Li</a>
-		
-  <p class="article-time">
-    <time datetime="2016-09-03T01:33:33.000Z" itemprop="datePublished"> 发表于 2016-09-03</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <blockquote>
-<p>从小学开始，我就是一个随便公子，做什么事情都是一副“差不多就行了”的样子就行了。但是，正是由于日积月累的态度不够端正，我才会在以后的生活中遭受不断地挫折。到了大学的末尾，我还是觉得自己的生活是一塌糊涂。够了，我真的受够了，我开始着手去改变。</p>
-</blockquote>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/09/03/2016/寻求改变，才是进步/寻求改变，才是进步/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/life/">life</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/08/31/Coding/2016-8-工作笔记/2016-8-工作笔记/" title="2016-8 工作笔记" itemprop="url">2016-8 工作笔记</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Eric Li" target="_blank" itemprop="author">Eric Li</a>
-		
-  <p class="article-time">
-    <time datetime="2016-08-31T08:16:33.000Z" itemprop="datePublished"> 发表于 2016-08-31</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h3 id="8-1-天气：晴"><a href="#8-1-天气：晴" class="headerlink" title="8-1 天气：晴"></a>8-1 天气：晴</h3><p>今天在强哥的帮助之下，拿到了暂停状态。挺无语的，要考虑的问题还真多。<br>1 非正常退出，要减去播放时长。目前解决的状态，暂停时候直接退出，可以剔除暂停时间。<br>2 非正常退出，还在播放状态，可以剔除暂停时长。<br>3 正常快进拖动，如果到达最后的时候，立马会触发end，进行上报，但是此时播放器的状态是暂停。再点击一次的话，又会再次触发上报。这个问题有待解决。<br>4 正常结束，可以进行上报。<br>5 暂停时候拖动，到最后的时候，依然会出现这个问题了啦。<br>6 退出的时候，直接执行上报是来不及的，要进行上报就要用线程池来执行。</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/08/31/Coding/2016-8-工作笔记/2016-8-工作笔记/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/work/">work</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/07/29/my university/2015/2015-In-ShenZhen/2015-In-ShenZhen/" title="2015 In ShenZhen" itemprop="url">2015 In ShenZhen</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Eric Li" target="_blank" itemprop="author">Eric Li</a>
-		
-  <p class="article-time">
-    <time datetime="2016-07-29T14:43:39.000Z" itemprop="datePublished"> 发表于 2016-07-29</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="深圳实习记录"><a href="#深圳实习记录" class="headerlink" title="深圳实习记录"></a>深圳实习记录</h1><blockquote>
-<p>这是一个小伙自己一个人去深圳闯荡的经历</p>
-</blockquote>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/07/29/my university/2015/2015-In-ShenZhen/2015-In-ShenZhen/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/work-life/">-work -life</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/07/12/my university/2015/整个大学，我就是这样和你们玩/整个大学，我就是这样和你们玩/" title="整个大学，我就是这样和你们玩" itemprop="url">整个大学，我就是这样和你们玩</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Eric Li" target="_blank" itemprop="author">Eric Li</a>
-		
-  <p class="article-time">
-    <time datetime="2016-07-12T14:36:41.000Z" itemprop="datePublished"> 发表于 2016-07-12</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <blockquote>
-<p>生来就是一个好动的人，性格就是爱玩，根本停不下来。回顾大学整整四年，我用手指头数一下我玩过什么体育项目好了。有乒乓球、轮滑、自行车、网球、游泳；篮球和足球算是超级菜，最后就是慢跑。这么精彩的大学户外阳光生活，我这就给你娓娓道来。</p>
-</blockquote>
-<h2 id="大学生活的憧憬"><a href="#大学生活的憧憬" class="headerlink" title="大学生活的憧憬"></a>大学生活的憧憬</h2><p>每个人刚刚去到大学校园，总有自己对大学生活的一番憧憬。是勤奋学习，是青春活力，亦或是社交达人，等等等等。我在2012年得知自己被华南师范大学录取的时候，就开始想象我的大学生活是怎样怎样的了。先说说自己的属性吧，我来自一个偏远的地方，所以基本是不能沉住气地坐着一天不走动，我总想找点什么东西来舒展筋骨，抖擞精神。所以，一上到大学，我就开始痴迷了我想要去做的户外运动。</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/07/12/my university/2015/整个大学，我就是这样和你们玩/整个大学，我就是这样和你们玩/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/life/">life</a><a href="/tags/college/">college</a><a href="/tags/sunshine/">sunshine</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/06/26/my university/2016/2016高考改卷技术支持体验/2016高考改卷技术支持体验/" title="2016高考改卷技术支持体验" itemprop="url">2016高考改卷技术支持体验</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Eric Li" target="_blank" itemprop="author">Eric Li</a>
-		
-  <p class="article-time">
-    <time datetime="2016-06-26T13:05:33.000Z" itemprop="datePublished"> 发表于 2016-06-26</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <blockquote>
-<p>占尽地理优势，在一个偶然的机会，我有幸参加了高考阅卷组的工作。我的职责就是作为考试院聘请的技术支持人员，在高考阅卷期间协助老师处理改卷中遇到的软件问题，确保高考改卷期间，系统可以完整运行。</p>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我自从5月初回家了以后，上网的时间就少了很多。在家里就潜心去做家务，特别是要增强自己的做饭技能，我那时自己的做饭技能就增进了好多。不安分的我总要想着要再次出去闯荡一下，隔一段时间就要刷新一下外界的信息。这不，我就在年级博客那里，捕捉到了要招聘高考改卷的技术支持的信息，我内心一阵狂喜，我要去这里。看看报名时间，距离截止时间已经过去了24小时，还能再报名的吗？我相信我们学校的办事风格，那里还能填写报名信息就是意味着还没有提交信息上去，我就认真地报名了。我心里默默念，我是可以进去的。三天以后，我收到信息，我是我们学院的技术支持小组负责人，心里的小鹿在跳动，我真的开心。我终于可以荣幸走进高考改卷现场，记录下万千考生的成绩是怎么评改出来的。笔者不想用太多的手法去描述，大部分都是筛选自自己的日常笔记…………</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/06/26/my university/2016/2016高考改卷技术支持体验/2016高考改卷技术支持体验/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/college/">college</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/06/22/my university/2014/科研立项组队，让我找到奋斗的感觉/科研立项组队，让我找到奋斗的感觉/" title="科研立项组队，让我找到奋斗的感觉" itemprop="url">科研立项组队，让我找到奋斗的感觉</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Eric Li" target="_blank" itemprop="author">Eric Li</a>
-		
-  <p class="article-time">
-    <time datetime="2016-06-22T02:57:44.000Z" itemprop="datePublished"> 发表于 2016-06-22</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><code>青春热血</code> <code>勇往直前</code> <code>专注</code> <code>团结</code></p>
-<blockquote>
-<p>不知什么原因，我对学院里面的事情都不怎么感兴趣。首先是社团直接pass了计算机学院的，这不，科研立项也是找到了数科院的同学，我们一起完成华师冒冒泡项目，并且完美通过了验收。过程中我们队伍真的是无限团结，共同成长。</p>
-</blockquote>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/06/22/my university/2014/科研立项组队，让我找到奋斗的感觉/科研立项组队，让我找到奋斗的感觉/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/college/">college</a><a href="/tags/fight/">fight</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-
-  <nav id="page-nav" class="clearfix">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
-  </nav>
-
-</div>
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#11月2日-天气-阴"><span class="toc-number">1.</span> <span class="toc-text">11月2日 天气:阴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11月3日-天气-阴"><span class="toc-number">2.</span> <span class="toc-text">11月3日 天气:阴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11月4日-天气-晴"><span class="toc-number">3.</span> <span class="toc-text">11月4日 天气:晴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11月7日-天气-晴"><span class="toc-number">4.</span> <span class="toc-text">11月7日 天气:晴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11月8日-天气-阴"><span class="toc-number">5.</span> <span class="toc-text">11月8日 天气:阴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11月9日-天气-阴"><span class="toc-number">6.</span> <span class="toc-text">11月9日 天气:阴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11月10日-天气-阴雨"><span class="toc-number">7.</span> <span class="toc-text">11月10日 天气:阴雨</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11月11日-天气-冷"><span class="toc-number">8.</span> <span class="toc-text">11月11日 天气:冷</span></a></li></ol>
+ 
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -927,12 +433,89 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
 
 
 
@@ -1003,4 +586,4 @@ var _hmt = _hmt || [];
 <!-- Tiny_search End -->
 
   </body>
- </html>
+</html>

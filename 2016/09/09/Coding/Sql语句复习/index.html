@@ -1,0 +1,582 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>巩固印象中的sql | Eric&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Eric Li">
+    
+
+    
+    <meta name="description" content="就是工作中遇到的情况记录下来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="巩固印象中的sql">
+<meta property="og:url" content="http://yoursite.com/2016/09/09/Coding/Sql语句复习/index.html">
+<meta property="og:site_name" content="Eric's Blog">
+<meta property="og:description" content="就是工作中遇到的情况记录下来">
+<meta property="og:updated_time" content="2016-09-09T08:50:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="巩固印象中的sql">
+<meta name="twitter:description" content="就是工作中遇到的情况记录下来">
+<meta name="twitter:creator" content="@https://twitter.com/ericli1235">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Eric&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Eric&#39;s Blog" title="Eric&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Eric&#39;s Blog">Eric&#39;s Blog</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/09/09/Coding/Sql语句复习/" title="巩固印象中的sql" itemprop="url">巩固印象中的sql</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Eric Li" target="_blank" itemprop="author">Eric Li</a>
+		
+  <p class="article-time">
+    <time datetime="2016-09-09T08:16:33.000Z" itemprop="datePublished"> 发表于 2016-09-09</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#从SELECT开始"><span class="toc-number">1.</span> <span class="toc-text">从SELECT开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#到INSERT了"><span class="toc-number">2.</span> <span class="toc-text">到INSERT了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#到更新语句了，UPDATE"><span class="toc-number">3.</span> <span class="toc-text">到更新语句了，UPDATE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更快就到了删除，DELETE语句，真的就只是介绍语法就好了"><span class="toc-number">4.</span> <span class="toc-text">更快就到了删除，DELETE语句，真的就只是介绍语法就好了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作表语句，CREATE-TABLE，ALERT-TABLE，DROP-TABLE"><span class="toc-number">5.</span> <span class="toc-text">操作表语句，CREATE TABLE，ALERT TABLE，DROP TABLE</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#视图"><span class="toc-number"></span> <span class="toc-text">视图</span></a>
+		
+		</div>
+		
+		<blockquote>
+<p>没事，我就是想要温习一下旧的知识，提升自己的内力。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="从SELECT开始"><a href="#从SELECT开始" class="headerlink" title="从SELECT开始"></a>从SELECT开始</h3><ul>
+<li>先来一个内联结的使用例子。使用联结就要记得加上联结条件，不然的话会得出笛卡尔积</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT a.id , COUNT(b.num) AS NUM_ORDER </div><div class="line">FROM a INNER JOIN b ON a.id = b.id GRPUP BY a.id</div></pre></td></tr></table></figure>
+<ul>
+<li>组合查询，将多条SELECT语句组合成为一个结果集，就是使用UNION。有两种情况需要用到组合查询：一个查询中从不同的表返回结构数据；对一个表执行多次查询，按一个查询返回结果。这个玩意写起来就比较复杂，，但是在使用多个表查询的时候，UNION处理会更加简单。UNION会自动取消掉重复的行，如果有需要，可以使用UNION ALL</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT cust_name,cust_contact,<span class="function">cust_email FROM Customers WHERE cust_state <span class="title">IN</span> <span class="params">(<span class="string">'IL'</span>,<span class="string">'IN'</span>,<span class="string">'MI'</span>)</span> UNION </span></div><div class="line">SELECT cust_name,cust_contact,cust_email FROM Customers WHERE cust_name = <span class="string">'Fun4All'</span>;</div></pre></td></tr></table></figure>
+<p>等价于：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT cust_name,cust_contact,<span class="function">cust_email FROM Customers WHERE  cust_state <span class="title">IN</span> <span class="params">(<span class="string">'IL'</span>,<span class="string">'IN'</span>,<span class="string">'MI'</span>)</span> OR WHERE cust_name </span>= <span class="string">'Fun4All'</span>;</div></pre></td></tr></table></figure>
+<h3 id="到INSERT了"><a href="#到INSERT了" class="headerlink" title="到INSERT了"></a>到INSERT了</h3><p>插入的几种方式</p>
+<ol>
+<li>插入完整的行</li>
+<li>插入行的一部分</li>
+<li>插入某些查询结果</li>
+</ol>
+<ul>
+<li>好的方式插入，这种方式可以插入全部信息或者部分信息，只要你指定好了列名。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function">INSERT INTO <span class="title">Customers</span><span class="params">(cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'1000001'</span>,<span class="string">'EricLi'</span>,<span class="string">'123Street'</span>,<span class="string">'NEW York'</span>,<span class="string">'NY'</span>,<span class="string">'1111'</span>,<span class="string">'UAS'</span>)</span></span>;</div></pre></td></tr></table></figure>
+<ul>
+<li>差的方式插入，明显就是没有指定列名，有一定的危险。一定要全部项都去给定一个值。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function">INSERT INTO Customers <span class="title">VALUES</span><span class="params">(<span class="string">'1000001'</span>,<span class="string">'EricLi'</span>,</span></span></div><div class="line"><span class="string">'123Street'</span>,<span class="string">'NEW York'</span>,<span class="string">'NY'</span>,<span class="string">'1111'</span>,<span class="string">'USA'</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>插入检索出来的数据,就是指定的列的数据，是通过其他表中检索出来的</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function">INSERT INTO <span class="title">Customers</span><span class="params">(cust_id,cust_name,cust_address,</span></span></div><div class="line">cust_city,cust_state,cust_zip,cust_country) SELECT  cust_id,cust_name,cust_address,</div><div class="line">cust_city,cust_state,cust_zip,cust_country FROM CustNEW</div></pre></td></tr></table></figure>
+<ul>
+<li>从一个表复制到另外一个表</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT * CustCopy INTO FROM Customers</div></pre></td></tr></table></figure>
+<p>另外一种方式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE AS 新表 SELECT * FROM 旧表</div></pre></td></tr></table></figure>
+<h3 id="到更新语句了，UPDATE"><a href="#到更新语句了，UPDATE" class="headerlink" title="到更新语句了，UPDATE"></a>到更新语句了，UPDATE</h3><p>简介：</p>
+<ul>
+<li>更新表中的所有行。没有写WHERE语句</li>
+<li><p>更新表中的特定行</p>
+</li>
+<li><p>简单用法</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UPDATE 表名 SET 域 = 新值 WHERE 筛选条件</div></pre></td></tr></table></figure>
+<h3 id="更快就到了删除，DELETE语句，真的就只是介绍语法就好了"><a href="#更快就到了删除，DELETE语句，真的就只是介绍语法就好了" class="headerlink" title="更快就到了删除，DELETE语句，真的就只是介绍语法就好了"></a>更快就到了删除，DELETE语句，真的就只是介绍语法就好了</h3><p>简介：</p>
+<ul>
+<li>删除表中的所有行。没有写WHERE语句</li>
+<li><p>删除表中的特定行</p>
+</li>
+<li><p>简单用法</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DELETE FROM 表名 WHERE 筛选条件</div></pre></td></tr></table></figure>
+<p>如果想要删除表中所有的行，不要使用DELETE语句，使用TRUNCATE TABLE 语句</p>
+<h3 id="操作表语句，CREATE-TABLE，ALERT-TABLE，DROP-TABLE"><a href="#操作表语句，CREATE-TABLE，ALERT-TABLE，DROP-TABLE" class="headerlink" title="操作表语句，CREATE TABLE，ALERT TABLE，DROP TABLE"></a>操作表语句，CREATE TABLE，ALERT TABLE，DROP TABLE</h3><p>CREATE TABLE这个，指定主键，指定类型，指定是否可以为NULL，指定默认值。NULL不是空字符串，不用混为一谈。那是什么都没有，是一个无效的值。而空字符串是一个有效的值。</p>
+<p>ALERT TABLE更新表结构<br>可以增加列或者删除列等。不过，要是真要这样去改，还不如新建一个新的表，把需要的数据从旧的表中复制过来。删旧表，更新旧表名到新表。</p>
+<p>DROP TABLE 这个就是删除表</p>
+<p>重命名表 RENAME</p>
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><p>我安卓的SQLite只是能支持只读视图，只能读，不能改。</p>
+<ul>
+<li>使用方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE VIEW CustomerNew AS SELECT * FROM Coustomer</div></pre></td></tr></table></figure>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/work/">work</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2016/09/09/Coding/Sql语句复习/" data-title="巩固印象中的sql | Eric&#39;s Blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/09/14/Coding/2016-9笔记/2016-9笔记/" title="2016-9笔记">
+  <strong>上一篇：</strong><br/>
+  <span>
+  2016-9笔记</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/09/03/2016/寻求改变，才是进步/寻求改变，才是进步/"  title="寻求改变，才是进步">
+ <strong>下一篇：</strong><br/> 
+ <span>寻求改变，才是进步
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#从SELECT开始"><span class="toc-number">1.</span> <span class="toc-text">从SELECT开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#到INSERT了"><span class="toc-number">2.</span> <span class="toc-text">到INSERT了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#到更新语句了，UPDATE"><span class="toc-number">3.</span> <span class="toc-text">到更新语句了，UPDATE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更快就到了删除，DELETE语句，真的就只是介绍语法就好了"><span class="toc-number">4.</span> <span class="toc-text">更快就到了删除，DELETE语句，真的就只是介绍语法就好了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作表语句，CREATE-TABLE，ALERT-TABLE，DROP-TABLE"><span class="toc-number">5.</span> <span class="toc-text">操作表语句，CREATE TABLE，ALERT TABLE，DROP TABLE</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#视图"><span class="toc-number"></span> <span class="toc-text">视图</span></a>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="github-card">
+<p class="asidetitle">Github 名片</p>
+<div class="github-card" data-github="https://github.com/Eric1235" data-width="220" data-height="119" data-theme="medium">
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+  </div>
+
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/life/" title="life">life<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/college/" title="college">college<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/work/" title="work">work<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/coding/" title="coding">coding<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/improve/" title="improve">improve<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/work-coding/" title="-work -coding">-work -coding<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/me/" title="me">me<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/coding-android/" title="coding android">coding android<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/fight/" title="fight">fight<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/work-life/" title="-work -life">-work -life<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sunshine/" title="sunshine">sunshine<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Be Fearless <br/>
+			Be an Engineer</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/https://github.com/Eric1235" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		<a href="https://twitter.com/https://twitter.com/ericli1235" target="_blank" class="icon-twitter" title="twitter"></a>
+		
+		
+		<a href="https://www.facebook.com/https://www.facebook.com/lixinkun" target="_blank" class="icon-facebook" title="facebook"></a>
+		
+		
+		
+		
+		
+		
+		<a href="mailto:Eric1235@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Eric Li">Eric Li</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
