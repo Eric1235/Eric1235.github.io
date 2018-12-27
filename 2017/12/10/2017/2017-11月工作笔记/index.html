@@ -11,22 +11,16 @@
     
 
     
-    <meta name="description" content="11月3日 天气:晴
-早上回来发现我的统计程序被执行了两次。一开始怀疑是我的代码写得有问题。但是细想一下，可能是别人开了另外一个程序跑了一次。一般来说是不用解决的，但是为了防止这种情况的发生，我做的处理就是先在数据库那里加上唯一索引。然后统计的时候先判断数据库里面有没有今天的统计数据，如果有，就不再执行统计。前者是最后一道防线，后者的话。只能在部署同时跑的情况下可以进行互斥。
-找一下解决手机端展">
+    <meta name="description" content="成为正式员工">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2017-11月工作笔记">
 <meta property="og:url" content="http://yoursite.com/2017/12/10/2017/2017-11月工作笔记/index.html">
 <meta property="og:site_name" content="Eric's Blog">
-<meta property="og:description" content="11月3日 天气:晴
-早上回来发现我的统计程序被执行了两次。一开始怀疑是我的代码写得有问题。但是细想一下，可能是别人开了另外一个程序跑了一次。一般来说是不用解决的，但是为了防止这种情况的发生，我做的处理就是先在数据库那里加上唯一索引。然后统计的时候先判断数据库里面有没有今天的统计数据，如果有，就不再执行统计。前者是最后一道防线，后者的话。只能在部署同时跑的情况下可以进行互斥。
-找一下解决手机端展">
-<meta property="og:updated_time" content="2018-01-10T14:21:25.156Z">
+<meta property="og:description" content="成为正式员工">
+<meta property="og:updated_time" content="2018-01-10T14:35:44.381Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017-11月工作笔记">
-<meta name="twitter:description" content="11月3日 天气:晴
-早上回来发现我的统计程序被执行了两次。一开始怀疑是我的代码写得有问题。但是细想一下，可能是别人开了另外一个程序跑了一次。一般来说是不用解决的，但是为了防止这种情况的发生，我做的处理就是先在数据库那里加上唯一索引。然后统计的时候先判断数据库里面有没有今天的统计数据，如果有，就不再执行统计。前者是最后一道防线，后者的话。只能在部署同时跑的情况下可以进行互斥。
-找一下解决手机端展">
+<meta name="twitter:description" content="成为正式员工">
 <meta name="twitter:creator" content="@ericli1235">
 <link rel="publisher" href="Eric1235">
 
@@ -108,11 +102,13 @@
 		
 		</div>
 		
-		<a id="more"></a>
+		<blockquote>
+<p>成为正式员工<br><a id="more"></a></p>
 <h2 id="11月3日-天气-晴"><a href="#11月3日-天气-晴" class="headerlink" title="11月3日 天气:晴"></a>11月3日 天气:晴</h2><ul>
 <li>早上回来发现我的统计程序被执行了两次。一开始怀疑是我的代码写得有问题。但是细想一下，可能是别人开了另外一个程序跑了一次。一般来说是不用解决的，但是为了防止这种情况的发生，我做的处理就是先在数据库那里加上唯一索引。然后统计的时候先判断数据库里面有没有今天的统计数据，如果有，就不再执行统计。前者是最后一道防线，后者的话。只能在部署同时跑的情况下可以进行互斥。</li>
 <li>找一下解决手机端展示视频链接过大的问题。</li>
 </ul>
+</blockquote>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="built_in">window</span>.onload = <span class="built_in">window</span>.onresize = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">resizeIframe();</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> resizeIframe=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">var</span> bodyw=<span class="built_in">document</span>.body.clientWidth;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> ilength=<span class="number">0</span>;ilength&lt;=<span class="built_in">document</span>.getElementsByTagName(<span class="string">"iframe"</span>).length;ilength++)&#123;</div><div class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">"iframe"</span>)[ilength].height = bodyw*<span class="number">9</span>/<span class="number">16</span>;<span class="comment">//设定高度</span></div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">width</span>=<span class="string">100%</span> <span class="attr">src</span>=<span class="string">"视频地址"</span> <span class="attr">frameborder</span>=<span class="string">0</span> <span class="attr">allowfullscreen</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="11月7日-天气-雨"><a href="#11月7日-天气-雨" class="headerlink" title="11月7日 天气:雨"></a>11月7日 天气:雨</h2><ul>
 <li>发送的东西有重复数据。看了一下数据库，丫的，真是的。虚拟店长和店长是这样子的哦，userId可以相同哦。我去重可以了吧。搞这个就搞了我好久，还要清除数据库。</li>
@@ -346,11 +342,11 @@
 			
 		
 			
-				<li><a href="/tags/me/" title="me">me<sup>1</sup></a></li>
+				<li><a href="/tags/improve/" title="improve">improve<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/improve/" title="improve">improve<sup>1</sup></a></li>
+				<li><a href="/tags/me/" title="me">me<sup>1</sup></a></li>
 			
 		
 			
@@ -362,15 +358,15 @@
 			
 		
 			
+				<li><a href="/tags/work-life/" title="-work -life">-work -life<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/fight/" title="fight">fight<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/work-life/" title="-work -life">-work -life<sup>1</sup></a></li>
 			
 		
 			
