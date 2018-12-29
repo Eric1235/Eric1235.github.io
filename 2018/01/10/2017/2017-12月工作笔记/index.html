@@ -125,7 +125,7 @@
 <li><p>在html中，引入另外一个html</p>
 </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">"page1"</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div id=<span class="string">"page2"</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">          $(<span class="string">"#page1"</span>).load(<span class="string">"page/Page_1.html"</span>);</span><br><span class="line">          $(<span class="string">"#page2"</span>).load(<span class="string">"page/Page_2.html"</span>);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">"page1"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &lt;div id=<span class="string">"page2"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">          $(<span class="string">"#page1"</span>).load(<span class="string">"page/Page_1.html"</span>);</span><br><span class="line">          $(<span class="string">"#page2"</span>).load(<span class="string">"page/Page_2.html"</span>);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//锁定表的某一行</span><br><span class="line"><span class="keyword">set</span> <span class="keyword">transaction</span> <span class="keyword">isolation</span> <span class="keyword">level</span> <span class="keyword">read</span> uncommitted</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="string">`id`</span> <span class="keyword">FROM</span>  <span class="keyword">table</span> <span class="keyword">WHERE</span>　<span class="keyword">id</span> <span class="keyword">in</span>(<span class="number">1</span>,<span class="number">2</span>)   <span class="keyword">LOCK</span> <span class="keyword">IN</span> <span class="keyword">SHARE</span> <span class="keyword">MODE</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="string">`id`</span> <span class="keyword">FROM</span> mk_user <span class="keyword">WHERE</span> <span class="keyword">id</span>=<span class="number">1</span> <span class="keyword">FOR</span> <span class="keyword">UPDATE</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>java虚拟机能够创建的线程数计算公式，得出的结论就是jvm的内存越多，能够创建的线程就越少</li>
@@ -252,18 +252,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev">
- <a href="/2018/12/27/2018/我的2018/" title="我的2018">
+ <a href="/2018/01/10/2018/2018-1月工作笔记/" title="2018-1月工作笔记">
   <strong>上一篇：</strong><br>
   <span>
-  我的2018</span>
+  2018-1月工作笔记</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2018/01/10/2018/2018-1月工作笔记/" title="2018-1月工作笔记">
+<a href="/2017/12/10/2017/2017-11月工作笔记/" title="2017-11月工作笔记">
  <strong>下一篇：</strong><br> 
- <span>2018-1月工作笔记
+ <span>2017-11月工作笔记
 </span>
 </a>
 </div>
@@ -332,11 +332,11 @@
 			
 		
 			
-				<li><a href="/tags/me/" title="me">me<sup>1</sup></a></li>
+				<li><a href="/tags/future/" title="future">future<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/sunshine/" title="sunshine">sunshine<sup>1</sup></a></li>
+				<li><a href="/tags/me/" title="me">me<sup>1</sup></a></li>
 			
 		
 			
@@ -344,7 +344,7 @@
 			
 		
 			
-				<li><a href="/tags/future/" title="future">future<sup>1</sup></a></li>
+				<li><a href="/tags/sunshine/" title="sunshine">sunshine<sup>1</sup></a></li>
 			
 		
 			

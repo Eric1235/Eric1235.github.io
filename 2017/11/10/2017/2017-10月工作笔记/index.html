@@ -11,17 +11,17 @@
     
 
     
-    <meta name="description" content="10月9日 天气:晴 不要把map作为参数，放在任何接口当中，除了DAO层。 传递枚举就是传递字符串。  10月10日 天气:晴 mybatis找不到resultType的类时，就给一个全路径的类名 数据库的优化1234567891011121314&amp;lt;select id=&quot;getByBelongKey&quot; resultType=&quot;com.yibaotong.ms.exam.dto.Simpl">
+    <meta name="description" content="10月9日 天气:晴 不要把map作为参数，放在任何接口当中，除了DAO层。 传递枚举就是传递字符串。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2017-10月工作笔记">
 <meta property="og:url" content="http://yoursite.com/2017/11/10/2017/2017-10月工作笔记/index.html">
 <meta property="og:site_name" content="Eric&#39;s Blog">
-<meta property="og:description" content="10月9日 天气:晴 不要把map作为参数，放在任何接口当中，除了DAO层。 传递枚举就是传递字符串。  10月10日 天气:晴 mybatis找不到resultType的类时，就给一个全路径的类名 数据库的优化1234567891011121314&amp;lt;select id=&quot;getByBelongKey&quot; resultType=&quot;com.yibaotong.ms.exam.dto.Simpl">
+<meta property="og:description" content="10月9日 天气:晴 不要把map作为参数，放在任何接口当中，除了DAO层。 传递枚举就是传递字符串。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-10T14:21:23.526Z">
+<meta property="og:updated_time" content="2018-12-29T04:33:17.387Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017-10月工作笔记">
-<meta name="twitter:description" content="10月9日 天气:晴 不要把map作为参数，放在任何接口当中，除了DAO层。 传递枚举就是传递字符串。  10月10日 天气:晴 mybatis找不到resultType的类时，就给一个全路径的类名 数据库的优化1234567891011121314&amp;lt;select id=&quot;getByBelongKey&quot; resultType=&quot;com.yibaotong.ms.exam.dto.Simpl">
+<meta name="twitter:description" content="10月9日 天气:晴 不要把map作为参数，放在任何接口当中，除了DAO层。 传递枚举就是传递字符串。">
 <meta name="twitter:creator" content="@ericli1235">
 <link rel="publisher" href="Eric1235">
 
@@ -103,11 +103,11 @@
 		
 		</div>
 		
-		<a id="more"></a>
-<h2 id="10月9日-天气-晴"><a href="#10月9日-天气-晴" class="headerlink" title="10月9日 天气:晴"></a>10月9日 天气:晴</h2><ul>
+		<h2 id="10月9日-天气-晴"><a href="#10月9日-天气-晴" class="headerlink" title="10月9日 天气:晴"></a>10月9日 天气:晴</h2><ul>
 <li>不要把map作为参数，放在任何接口当中，除了DAO层。</li>
 <li>传递枚举就是传递字符串。</li>
 </ul>
+<a id="more"></a>
 <h2 id="10月10日-天气-晴"><a href="#10月10日-天气-晴" class="headerlink" title="10月10日 天气:晴"></a>10月10日 天气:晴</h2><ul>
 <li>mybatis找不到resultType的类时，就给一个全路径的类名</li>
 <li>数据库的优化<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getByBelongKey"</span> <span class="attr">resultType</span>=<span class="string">"com.yibaotong.ms.exam.dto.SimpleExamDTO"</span>&gt;</span></span><br><span class="line">    SELECT a.id AS examId, b.question_num AS questionNum, b.title AS paperTitle, b.type_name AS paperTypeName</span><br><span class="line">    FROM exam AS a JOIN (SELECT id, type_name, title, question_num FROM exam_paper) AS b ON a.exam_paper_id = b.id</span><br><span class="line">    <span class="tag">&lt;<span class="name">trim</span> <span class="attr">prefix</span>=<span class="string">"WHERE"</span> <span class="attr">prefixOverrides</span>=<span class="string">"AND | OR"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"belongType != null"</span>&gt;</span></span><br><span class="line">            AND a.belong_type = #&#123;belongType&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"belongKey != null"</span>&gt;</span></span><br><span class="line">            AND a.belong_key = #&#123;belongKey&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        AND a.is_sys = 0</span><br><span class="line">    <span class="tag">&lt;/<span class="name">trim</span>&gt;</span></span><br><span class="line">    ORDER BY a.id DESC</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -315,11 +315,11 @@
 			
 		
 			
-				<li><a href="/tags/me/" title="me">me<sup>1</sup></a></li>
+				<li><a href="/tags/future/" title="future">future<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/sunshine/" title="sunshine">sunshine<sup>1</sup></a></li>
+				<li><a href="/tags/me/" title="me">me<sup>1</sup></a></li>
 			
 		
 			
@@ -327,7 +327,7 @@
 			
 		
 			
-				<li><a href="/tags/future/" title="future">future<sup>1</sup></a></li>
+				<li><a href="/tags/sunshine/" title="sunshine">sunshine<sup>1</sup></a></li>
 			
 		
 			
