@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-CN">
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
   
     <title>安卓6.0运行时申请权限介绍 | Eric&#39;s Blog</title>
@@ -12,11 +12,13 @@
 
     
     <meta name="description" content="#安卓6.0运行时申请权限介绍">
+<meta name="keywords" content="coding,android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安卓6.0运行时申请权限介绍">
 <meta property="og:url" content="http://yoursite.com/2016/05/30/Coding/Android/安卓运行时权限/index.html">
-<meta property="og:site_name" content="Eric's Blog">
+<meta property="og:site_name" content="Eric&#39;s Blog">
 <meta property="og:description" content="#安卓6.0运行时申请权限介绍">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-11-11T08:52:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安卓6.0运行时申请权限介绍">
@@ -36,14 +38,14 @@
     
     <link rel="stylesheet" href="/css/style.css">
 </head>
-
+</html>
   <body>
     <header>
       
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="Eric&#39;s Blog" title="Eric&#39;s Blog"/></a>
+				<a href="/"><img src="/img/logo.png" alt="Eric&#39;s Blog" title="Eric&#39;s Blog"></a>
 			</div>
 			
 			<div id="textlogo">
@@ -66,17 +68,17 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索">
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
 					</li>
 				</ul>
-			</nav>			
+			</ul></nav>			
 </div>
     </header>
     <div id="container">
-      <div id="main" class="post" itemscope itemprop="blogPost">
+      <div id="main" class="post" itemscope="" itemprop="blogPost">
   
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
@@ -88,7 +90,7 @@
        
 		<a href="https://plus.google.com/Eric1235?rel=author" title="Eric Li" target="_blank" itemprop="author">Eric Li</a>
 		
-  <p class="article-time">
+  </p><p class="article-time">
     <time datetime="2016-05-30T05:08:43.000Z" itemprop="datePublished"> 发表于 2016-05-30</time>
     
   </p>
@@ -104,19 +106,19 @@
 		
 		<p>#安卓6.0运行时申请权限介绍</p>
 <a id="more"></a>
-<p>##危险权限<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">group:android.permission-group.CONTACTS</div><div class="line">  permission:android.permission.WRITE_CONTACTS</div><div class="line">  permission:android.permission.GET_ACCOUNTS</div><div class="line">  permission:android.permission.READ_CONTACTS</div><div class="line"></div><div class="line">group:android.permission-group.PHONE</div><div class="line">  permission:android.permission.READ_CALL_LOG</div><div class="line">  permission:android.permission.READ_PHONE_STATE</div><div class="line">  permission:android.permission.CALL_PHONE</div><div class="line">  permission:android.permission.WRITE_CALL_LOG</div><div class="line">  permission:android.permission.USE_SIP</div><div class="line">  permission:android.permission.PROCESS_OUTGOING_CALLS</div><div class="line">  permission:com.android.voicemail.permission.ADD_VOICEMAIL</div><div class="line"></div><div class="line">group:android.permission-group.CALENDAR</div><div class="line">  permission:android.permission.READ_CALENDAR</div><div class="line">  permission:android.permission.WRITE_CALENDAR</div><div class="line"></div><div class="line">group:android.permission-group.CAMERA</div><div class="line">  permission:android.permission.CAMERA</div><div class="line"></div><div class="line">group:android.permission-group.SENSORS</div><div class="line">  permission:android.permission.BODY_SENSORS</div><div class="line"></div><div class="line">group:android.permission-group.LOCATION</div><div class="line">  permission:android.permission.ACCESS_FINE_LOCATION</div><div class="line">  permission:android.permission.ACCESS_COARSE_LOCATION</div><div class="line"></div><div class="line">group:android.permission-group.STORAGE</div><div class="line">  permission:android.permission.READ_EXTERNAL_STORAGE</div><div class="line">  permission:android.permission.WRITE_EXTERNAL_STORAGE</div><div class="line"></div><div class="line">group:android.permission-group.MICROPHONE</div><div class="line">  permission:android.permission.RECORD_AUDIO</div><div class="line"></div><div class="line">group:android.permission-group.SMS</div><div class="line">  permission:android.permission.READ_SMS</div><div class="line">  permission:android.permission.RECEIVE_WAP_PUSH</div><div class="line">  permission:android.permission.RECEIVE_MMS</div><div class="line">  permission:android.permission.RECEIVE_SMS</div><div class="line">  permission:android.permission.SEND_SMS</div><div class="line">  permission:android.permission.READ_CELL_BROADCASTS</div></pre></td></tr></table></figure></p>
-<p>##普通权限<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">ACCESS_LOCATION_EXTRA_COMMANDS</div><div class="line">ACCESS_NETWORK_STATE</div><div class="line">ACCESS_NOTIFICATION_POLICY</div><div class="line">ACCESS_WIFI_STATE</div><div class="line">BLUETOOTH</div><div class="line">BLUETOOTH_ADMIN</div><div class="line">BROADCAST_STICKY</div><div class="line">CHANGE_NETWORK_STATE</div><div class="line">CHANGE_WIFI_MULTICAST_STATE</div><div class="line">CHANGE_WIFI_STATE</div><div class="line">DISABLE_KEYGUARD</div><div class="line">EXPAND_STATUS_BAR</div><div class="line">GET_PACKAGE_SIZE</div><div class="line">INSTALL_SHORTCUT</div><div class="line">INTERNET</div><div class="line">KILL_BACKGROUND_PROCESSES</div><div class="line">MODIFY_AUDIO_SETTINGS</div><div class="line">NFC</div><div class="line">READ_SYNC_SETTINGS</div><div class="line">READ_SYNC_STATS</div><div class="line">RECEIVE_BOOT_COMPLETED</div><div class="line">REORDER_TASKS</div><div class="line">REQUEST_INSTALL_PACKAGES</div><div class="line">SET_ALARM</div><div class="line">SET_TIME_ZONE</div><div class="line">SET_WALLPAPER</div><div class="line">SET_WALLPAPER_HINTS</div><div class="line">TRANSMIT_IR</div><div class="line">UNINSTALL_SHORTCUT</div><div class="line">USE_FINGERPRINT</div><div class="line">VIBRATE</div><div class="line">WAKE_LOCK</div><div class="line">WRITE_SYNC_SETTINGS</div></pre></td></tr></table></figure></p>
+<p>##危险权限<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">group:android.permission-group.CONTACTS</span><br><span class="line">  permission:android.permission.WRITE_CONTACTS</span><br><span class="line">  permission:android.permission.GET_ACCOUNTS</span><br><span class="line">  permission:android.permission.READ_CONTACTS</span><br><span class="line"></span><br><span class="line">group:android.permission-group.PHONE</span><br><span class="line">  permission:android.permission.READ_CALL_LOG</span><br><span class="line">  permission:android.permission.READ_PHONE_STATE</span><br><span class="line">  permission:android.permission.CALL_PHONE</span><br><span class="line">  permission:android.permission.WRITE_CALL_LOG</span><br><span class="line">  permission:android.permission.USE_SIP</span><br><span class="line">  permission:android.permission.PROCESS_OUTGOING_CALLS</span><br><span class="line">  permission:com.android.voicemail.permission.ADD_VOICEMAIL</span><br><span class="line"></span><br><span class="line">group:android.permission-group.CALENDAR</span><br><span class="line">  permission:android.permission.READ_CALENDAR</span><br><span class="line">  permission:android.permission.WRITE_CALENDAR</span><br><span class="line"></span><br><span class="line">group:android.permission-group.CAMERA</span><br><span class="line">  permission:android.permission.CAMERA</span><br><span class="line"></span><br><span class="line">group:android.permission-group.SENSORS</span><br><span class="line">  permission:android.permission.BODY_SENSORS</span><br><span class="line"></span><br><span class="line">group:android.permission-group.LOCATION</span><br><span class="line">  permission:android.permission.ACCESS_FINE_LOCATION</span><br><span class="line">  permission:android.permission.ACCESS_COARSE_LOCATION</span><br><span class="line"></span><br><span class="line">group:android.permission-group.STORAGE</span><br><span class="line">  permission:android.permission.READ_EXTERNAL_STORAGE</span><br><span class="line">  permission:android.permission.WRITE_EXTERNAL_STORAGE</span><br><span class="line"></span><br><span class="line">group:android.permission-group.MICROPHONE</span><br><span class="line">  permission:android.permission.RECORD_AUDIO</span><br><span class="line"></span><br><span class="line">group:android.permission-group.SMS</span><br><span class="line">  permission:android.permission.READ_SMS</span><br><span class="line">  permission:android.permission.RECEIVE_WAP_PUSH</span><br><span class="line">  permission:android.permission.RECEIVE_MMS</span><br><span class="line">  permission:android.permission.RECEIVE_SMS</span><br><span class="line">  permission:android.permission.SEND_SMS</span><br><span class="line">  permission:android.permission.READ_CELL_BROADCASTS</span><br></pre></td></tr></table></figure></p>
+<p>##普通权限<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">ACCESS_LOCATION_EXTRA_COMMANDS</span><br><span class="line">ACCESS_NETWORK_STATE</span><br><span class="line">ACCESS_NOTIFICATION_POLICY</span><br><span class="line">ACCESS_WIFI_STATE</span><br><span class="line">BLUETOOTH</span><br><span class="line">BLUETOOTH_ADMIN</span><br><span class="line">BROADCAST_STICKY</span><br><span class="line">CHANGE_NETWORK_STATE</span><br><span class="line">CHANGE_WIFI_MULTICAST_STATE</span><br><span class="line">CHANGE_WIFI_STATE</span><br><span class="line">DISABLE_KEYGUARD</span><br><span class="line">EXPAND_STATUS_BAR</span><br><span class="line">GET_PACKAGE_SIZE</span><br><span class="line">INSTALL_SHORTCUT</span><br><span class="line">INTERNET</span><br><span class="line">KILL_BACKGROUND_PROCESSES</span><br><span class="line">MODIFY_AUDIO_SETTINGS</span><br><span class="line">NFC</span><br><span class="line">READ_SYNC_SETTINGS</span><br><span class="line">READ_SYNC_STATS</span><br><span class="line">RECEIVE_BOOT_COMPLETED</span><br><span class="line">REORDER_TASKS</span><br><span class="line">REQUEST_INSTALL_PACKAGES</span><br><span class="line">SET_ALARM</span><br><span class="line">SET_TIME_ZONE</span><br><span class="line">SET_WALLPAPER</span><br><span class="line">SET_WALLPAPER_HINTS</span><br><span class="line">TRANSMIT_IR</span><br><span class="line">UNINSTALL_SHORTCUT</span><br><span class="line">USE_FINGERPRINT</span><br><span class="line">VIBRATE</span><br><span class="line">WAKE_LOCK</span><br><span class="line">WRITE_SYNC_SETTINGS</span><br></pre></td></tr></table></figure></p>
 <p>可以通过adb shell pm list permissions -d -g进行查看。</p>
 <p>##相关api介绍<br>1.申请权限，和之前的步骤一样</p>
-<p>2.检查权限<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (ContextCompat.checkSelfPermission(thisActivity,</div><div class="line">                Manifest.permission.READ_CONTACTS)</div><div class="line">        != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2.检查权限<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (ContextCompat.checkSelfPermission(thisActivity,</span><br><span class="line">                Manifest.permission.READ_CONTACTS)</span><br><span class="line">        != PackageManager.PERMISSION_GRANTED) &#123;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这里涉及到一个API，ContextCompat.checkSelfPermission，主要用于检测某个权限是否已经被授予，方法返回值</p>
 <p>为<code>PackageManager.PERMISSION_DENIED</code>或者<code>PackageManager.PERMISSION_GRANTED</code>。当返回DENIED就需要进行申请授权了。</p>
-<p>3.申请权限<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ActivityCompat.requestPermissions(thisActivity,</div><div class="line">                <span class="keyword">new</span> String[]&#123;Manifest.permission.READ_CONTACTS&#125;,</div><div class="line">                MY_PERMISSIONS_REQUEST_READ_CONTACTS);</div></pre></td></tr></table></figure></p>
+<p>3.申请权限<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ActivityCompat.requestPermissions(thisActivity,</span><br><span class="line">                <span class="keyword">new</span> String[]&#123;Manifest.permission.READ_CONTACTS&#125;,</span><br><span class="line">                MY_PERMISSIONS_REQUEST_READ_CONTACTS);</span><br></pre></td></tr></table></figure></p>
 <p>该方法是异步的，第一个参数是Context；第二个参数是需要申请的权限的字符串数组；第三个参数为requestCode，主要用于回调的时候检测。</p>
 <p>可以从方法名<code>requestPermissions</code>以及第二个参数看出，是支持一次性申请多个权限的，系统会通过对话框逐一询问用户是否授权。</p>
-<p>4.处理权限申请回调<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode,</span></span></div><div class="line">        String permissions[], <span class="keyword">int</span>[] grantResults) &#123;</div><div class="line">    <span class="keyword">switch</span> (requestCode) &#123;</div><div class="line">        <span class="keyword">case</span> MY_PERMISSIONS_REQUEST_READ_CONTACTS: &#123;</div><div class="line">            <span class="comment">// If request is cancelled, the result arrays are empty.</span></div><div class="line">            <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span></div><div class="line">                &amp;&amp; grantResults[<span class="number">0</span>] == PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line"></div><div class="line">                <span class="comment">// permission was granted, yay! Do the</span></div><div class="line">                <span class="comment">// contacts-related task you need to do.</span></div><div class="line"></div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line"></div><div class="line">                <span class="comment">// permission denied, boo! Disable the</span></div><div class="line">                <span class="comment">// functionality that depends on this permission.</span></div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>4.处理权限申请回调<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode,</span></span></span><br><span class="line"><span class="function"><span class="params">        String permissions[], <span class="keyword">int</span>[] grantResults)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span> (requestCode) &#123;</span><br><span class="line">        <span class="keyword">case</span> MY_PERMISSIONS_REQUEST_READ_CONTACTS: &#123;</span><br><span class="line">            <span class="comment">// If request is cancelled, the result arrays are empty.</span></span><br><span class="line">            <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span></span><br><span class="line">                &amp;&amp; grantResults[<span class="number">0</span>] == PackageManager.PERMISSION_GRANTED) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// permission was granted, yay! Do the</span></span><br><span class="line">                <span class="comment">// contacts-related task you need to do.</span></span><br><span class="line"></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// permission denied, boo! Disable the</span></span><br><span class="line">                <span class="comment">// functionality that depends on this permission.</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>ok，对于权限的申请结果，首先验证requestCode定位到你的申请，然后验证grantResults对应于申请的结果，这里的数组对应于申请时的第二个权限字符串数组。如果你同时申请两个权限，那么grantResults的length就为2，分别记录你两个权限的申请结果。如果申请成功，就可以做你的事情了~</p>
-<p>还有一个api要介绍，就是在用户已经拒绝过一次该权限申请以后，你要给用户一个解释。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Should we show an explanation?</span></div><div class="line"><span class="keyword">if</span> (ActivityCompat.shouldShowRequestPermissionRationale(thisActivity,</div><div class="line">        Manifest.permission.READ_CONTACTS))</div><div class="line">    <span class="comment">// Show an expanation to the user *asynchronously* -- don't block</span></div><div class="line">    <span class="comment">// this thread waiting for the user's response! After the user</span></div><div class="line">    <span class="comment">// sees the explanation, try again to request the permission.</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>还有一个api要介绍，就是在用户已经拒绝过一次该权限申请以后，你要给用户一个解释。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Should we show an explanation?</span></span><br><span class="line"><span class="keyword">if</span> (ActivityCompat.shouldShowRequestPermissionRationale(thisActivity,</span><br><span class="line">        Manifest.permission.READ_CONTACTS))</span><br><span class="line">    <span class="comment">// Show an expanation to the user *asynchronously* -- don't block</span></span><br><span class="line">    <span class="comment">// this thread waiting for the user's response! After the user</span></span><br><span class="line">    <span class="comment">// sees the explanation, try again to request the permission.</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这样，整个App申请权限的步骤就走完了。</p>
   
 	</div>
@@ -147,7 +149,7 @@
 	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	<a class="jiathis_counter_style"></a>
 </div>
-<script type="text/javascript" >
+<script type="text/javascript">
     var jiathis_config={
     data_track_clickback:true,
     sm:"copy,renren,cqq",
@@ -171,9 +173,9 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
+ <div class="prev">
  <a href="/2016/05/31/2016/别把意外想得太远了哦/" title="别把意外想得太远了哦">
-  <strong>上一篇：</strong><br/>
+  <strong>上一篇：</strong><br>
   <span>
   别把意外想得太远了哦</span>
 </a>
@@ -181,8 +183,8 @@
 
 
 <div class="next">
-<a href="/2016/05/30/my university/2016/travel/2016-in-HaiNan/"  title="2016 in HaiNan">
- <strong>下一篇：</strong><br/> 
+<a href="/2016/05/30/my university/2016/travel/2016-in-HaiNan/" title="2016 in HaiNan">
+ <strong>下一篇：</strong><br> 
  <span>2016 in HaiNan
 </span>
 </a>
@@ -214,7 +216,7 @@
 <div class="github-card">
 <p class="asidetitle">Github 名片</p>
 <div class="github-card" data-github="Eric1235" data-width="220" data-height="119" data-theme="medium">
-<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 </div>
   </div>
 
@@ -252,11 +254,11 @@
 			
 		
 			
-				<li><a href="/tags/future/" title="future">future<sup>1</sup></a></li>
+				<li><a href="/tags/me/" title="me">me<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/me/" title="me">me<sup>1</sup></a></li>
+				<li><a href="/tags/sunshine/" title="sunshine">sunshine<sup>1</sup></a></li>
 			
 		
 			
@@ -264,7 +266,7 @@
 			
 		
 			
-				<li><a href="/tags/sunshine/" title="sunshine">sunshine<sup>1</sup></a></li>
+				<li><a href="/tags/future/" title="future">future<sup>1</sup></a></li>
 			
 		
 			
@@ -311,14 +313,14 @@
 
   <div class="weiboshow">
   <p class="asidetitle">新浪微博</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1634073622&verifier=43ce7f75&dpc=1"></iframe>
+    <iframe width="100%" height="119" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1634073622&verifier=43ce7f75&dpc=1"></iframe>
 </div>
 
 
 </aside>
 </div>
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
 	<div class="line">
 		<span></span>
@@ -327,11 +329,11 @@
 	
 	
 	<section class="info">
-		<p> Be Fearless <br/>
+		<p> Be Fearless <br>
 			Be an Engineer</p>
 	</section>
 	 
-	<div class="social-font" class="clearfix">
+	<div class="social-font">
 		
 		<a href="http://weibo.com/1634073622" target="_blank" class="icon-weibo" title="微博"></a>
 		
@@ -510,7 +512,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	<a title="返回顶部"><img src="/img/scrollup.png"></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

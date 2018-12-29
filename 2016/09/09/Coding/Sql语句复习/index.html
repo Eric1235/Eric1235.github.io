@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-CN">
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
   
     <title>巩固印象中的sql | Eric&#39;s Blog</title>
@@ -12,11 +12,13 @@
 
     
     <meta name="description" content="就是工作中遇到的情况记录下来">
+<meta name="keywords" content="work">
 <meta property="og:type" content="article">
 <meta property="og:title" content="巩固印象中的sql">
 <meta property="og:url" content="http://yoursite.com/2016/09/09/Coding/Sql语句复习/index.html">
-<meta property="og:site_name" content="Eric's Blog">
+<meta property="og:site_name" content="Eric&#39;s Blog">
 <meta property="og:description" content="就是工作中遇到的情况记录下来">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-09-09T08:50:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="巩固印象中的sql">
@@ -36,14 +38,14 @@
     
     <link rel="stylesheet" href="/css/style.css">
 </head>
-
+</html>
   <body>
     <header>
       
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="Eric&#39;s Blog" title="Eric&#39;s Blog"/></a>
+				<a href="/"><img src="/img/logo.png" alt="Eric&#39;s Blog" title="Eric&#39;s Blog"></a>
 			</div>
 			
 			<div id="textlogo">
@@ -66,17 +68,17 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索">
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
 					</li>
 				</ul>
-			</nav>			
+			</ul></nav>			
 </div>
     </header>
     <div id="container">
-      <div id="main" class="post" itemscope itemprop="blogPost">
+      <div id="main" class="post" itemscope="" itemprop="blogPost">
   
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
@@ -88,7 +90,7 @@
        
 		<a href="https://plus.google.com/Eric1235?rel=author" title="Eric Li" target="_blank" itemprop="author">Eric Li</a>
 		
-  <p class="article-time">
+  </p><p class="article-time">
     <time datetime="2016-09-09T08:16:33.000Z" itemprop="datePublished"> 发表于 2016-09-09</time>
     
   </p>
@@ -98,9 +100,9 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#从SELECT开始"><span class="toc-number">1.</span> <span class="toc-text">从SELECT开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#到INSERT了"><span class="toc-number">2.</span> <span class="toc-text">到INSERT了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#到更新语句了，UPDATE"><span class="toc-number">3.</span> <span class="toc-text">到更新语句了，UPDATE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更快就到了删除，DELETE语句，真的就只是介绍语法就好了"><span class="toc-number">4.</span> <span class="toc-text">更快就到了删除，DELETE语句，真的就只是介绍语法就好了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作表语句，CREATE-TABLE，ALERT-TABLE，DROP-TABLE"><span class="toc-number">5.</span> <span class="toc-text">操作表语句，CREATE TABLE，ALERT TABLE，DROP TABLE</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#视图"><span class="toc-number"></span> <span class="toc-text">视图</span></a>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#从SELECT开始"><span class="toc-number">1.</span> <span class="toc-text">从SELECT开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#到INSERT了"><span class="toc-number">2.</span> <span class="toc-text">到INSERT了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#到更新语句了，UPDATE"><span class="toc-number">3.</span> <span class="toc-text">到更新语句了，UPDATE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更快就到了删除，DELETE语句，真的就只是介绍语法就好了"><span class="toc-number">4.</span> <span class="toc-text">更快就到了删除，DELETE语句，真的就只是介绍语法就好了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作表语句，CREATE-TABLE，ALERT-TABLE，DROP-TABLE"><span class="toc-number">5.</span> <span class="toc-text">操作表语句，CREATE TABLE，ALERT TABLE，DROP TABLE</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#视图"><span class="toc-number"></span> <span class="toc-text">视图</span></a>
 		
-		</div>
+		</li></div>
 		
 		<blockquote>
 <p>没事，我就是想要温习一下旧的知识，提升自己的内力。</p>
@@ -109,13 +111,13 @@
 <h3 id="从SELECT开始"><a href="#从SELECT开始" class="headerlink" title="从SELECT开始"></a>从SELECT开始</h3><ul>
 <li>先来一个内联结的使用例子。使用联结就要记得加上联结条件，不然的话会得出笛卡尔积</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT a.id , COUNT(b.num) AS NUM_ORDER </div><div class="line">FROM a INNER JOIN b ON a.id = b.id GRPUP BY a.id</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT a.id , COUNT(b.num) AS NUM_ORDER </span><br><span class="line">FROM a INNER JOIN b ON a.id = b.id GRPUP BY a.id</span><br></pre></td></tr></table></figure>
 <ul>
 <li>组合查询，将多条SELECT语句组合成为一个结果集，就是使用UNION。有两种情况需要用到组合查询：一个查询中从不同的表返回结构数据；对一个表执行多次查询，按一个查询返回结果。这个玩意写起来就比较复杂，，但是在使用多个表查询的时候，UNION处理会更加简单。UNION会自动取消掉重复的行，如果有需要，可以使用UNION ALL</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT cust_name,cust_contact,<span class="function">cust_email FROM Customers WHERE cust_state <span class="title">IN</span> <span class="params">(<span class="string">'IL'</span>,<span class="string">'IN'</span>,<span class="string">'MI'</span>)</span> UNION </span></div><div class="line">SELECT cust_name,cust_contact,cust_email FROM Customers WHERE cust_name = <span class="string">'Fun4All'</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT cust_name,cust_contact,<span class="function">cust_email FROM Customers WHERE cust_state <span class="title">IN</span> <span class="params">(<span class="string">'IL'</span>,<span class="string">'IN'</span>,<span class="string">'MI'</span>)</span> UNION </span></span><br><span class="line"><span class="function">SELECT cust_name,cust_contact,cust_email FROM Customers WHERE cust_name </span>= <span class="string">'Fun4All'</span>;</span><br></pre></td></tr></table></figure>
 <p>等价于：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT cust_name,cust_contact,<span class="function">cust_email FROM Customers WHERE  cust_state <span class="title">IN</span> <span class="params">(<span class="string">'IL'</span>,<span class="string">'IN'</span>,<span class="string">'MI'</span>)</span> OR WHERE cust_name </span>= <span class="string">'Fun4All'</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT cust_name,cust_contact,<span class="function">cust_email FROM Customers WHERE  cust_state <span class="title">IN</span> <span class="params">(<span class="string">'IL'</span>,<span class="string">'IN'</span>,<span class="string">'MI'</span>)</span> OR WHERE cust_name </span>= <span class="string">'Fun4All'</span>;</span><br></pre></td></tr></table></figure>
 <h3 id="到INSERT了"><a href="#到INSERT了" class="headerlink" title="到INSERT了"></a>到INSERT了</h3><p>插入的几种方式</p>
 <ol>
 <li>插入完整的行</li>
@@ -125,21 +127,21 @@
 <ul>
 <li>好的方式插入，这种方式可以插入全部信息或者部分信息，只要你指定好了列名。</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function">INSERT INTO <span class="title">Customers</span><span class="params">(cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'1000001'</span>,<span class="string">'EricLi'</span>,<span class="string">'123Street'</span>,<span class="string">'NEW York'</span>,<span class="string">'NY'</span>,<span class="string">'1111'</span>,<span class="string">'UAS'</span>)</span></span>;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">Customers</span><span class="params">(cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'1000001'</span>,<span class="string">'EricLi'</span>,<span class="string">'123Street'</span>,<span class="string">'NEW York'</span>,<span class="string">'NY'</span>,<span class="string">'1111'</span>,<span class="string">'UAS'</span>)</span></span>;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>差的方式插入，明显就是没有指定列名，有一定的危险。一定要全部项都去给定一个值。</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function">INSERT INTO Customers <span class="title">VALUES</span><span class="params">(<span class="string">'1000001'</span>,<span class="string">'EricLi'</span>,</span></span></div><div class="line"><span class="string">'123Street'</span>,<span class="string">'NEW York'</span>,<span class="string">'NY'</span>,<span class="string">'1111'</span>,<span class="string">'USA'</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">INSERT INTO Customers <span class="title">VALUES</span><span class="params">(<span class="string">'1000001'</span>,<span class="string">'EricLi'</span>,</span></span></span><br><span class="line"><span class="function"><span class="params"><span class="string">'123Street'</span>,<span class="string">'NEW York'</span>,<span class="string">'NY'</span>,<span class="string">'1111'</span>,<span class="string">'USA'</span>)</span></span>;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>插入检索出来的数据,就是指定的列的数据，是通过其他表中检索出来的</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function">INSERT INTO <span class="title">Customers</span><span class="params">(cust_id,cust_name,cust_address,</span></span></div><div class="line">cust_city,cust_state,cust_zip,cust_country) SELECT  cust_id,cust_name,cust_address,</div><div class="line">cust_city,cust_state,cust_zip,cust_country FROM CustNEW</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">Customers</span><span class="params">(cust_id,cust_name,cust_address,</span></span></span><br><span class="line"><span class="function"><span class="params">cust_city,cust_state,cust_zip,cust_country)</span> SELECT  cust_id,cust_name,cust_address,</span></span><br><span class="line"><span class="function">cust_city,cust_state,cust_zip,cust_country FROM CustNEW</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>从一个表复制到另外一个表</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT * CustCopy INTO FROM Customers</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * CustCopy INTO FROM Customers</span><br></pre></td></tr></table></figure>
 <p>另外一种方式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE AS 新表 SELECT * FROM 旧表</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE AS 新表 SELECT * FROM 旧表</span><br></pre></td></tr></table></figure>
 <h3 id="到更新语句了，UPDATE"><a href="#到更新语句了，UPDATE" class="headerlink" title="到更新语句了，UPDATE"></a>到更新语句了，UPDATE</h3><p>简介：</p>
 <ul>
 <li>更新表中的所有行。没有写WHERE语句</li>
@@ -148,7 +150,7 @@
 <li><p>简单用法</p>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UPDATE 表名 SET 域 = 新值 WHERE 筛选条件</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE 表名 SET 域 = 新值 WHERE 筛选条件</span><br></pre></td></tr></table></figure>
 <h3 id="更快就到了删除，DELETE语句，真的就只是介绍语法就好了"><a href="#更快就到了删除，DELETE语句，真的就只是介绍语法就好了" class="headerlink" title="更快就到了删除，DELETE语句，真的就只是介绍语法就好了"></a>更快就到了删除，DELETE语句，真的就只是介绍语法就好了</h3><p>简介：</p>
 <ul>
 <li>删除表中的所有行。没有写WHERE语句</li>
@@ -157,7 +159,7 @@
 <li><p>简单用法</p>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DELETE FROM 表名 WHERE 筛选条件</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM 表名 WHERE 筛选条件</span><br></pre></td></tr></table></figure>
 <p>如果想要删除表中所有的行，不要使用DELETE语句，使用TRUNCATE TABLE 语句</p>
 <h3 id="操作表语句，CREATE-TABLE，ALERT-TABLE，DROP-TABLE"><a href="#操作表语句，CREATE-TABLE，ALERT-TABLE，DROP-TABLE" class="headerlink" title="操作表语句，CREATE TABLE，ALERT TABLE，DROP TABLE"></a>操作表语句，CREATE TABLE，ALERT TABLE，DROP TABLE</h3><p>CREATE TABLE这个，指定主键，指定类型，指定是否可以为NULL，指定默认值。NULL不是空字符串，不用混为一谈。那是什么都没有，是一个无效的值。而空字符串是一个有效的值。</p>
 <p>ALERT TABLE更新表结构<br>可以增加列或者删除列等。不过，要是真要这样去改，还不如新建一个新的表，把需要的数据从旧的表中复制过来。删旧表，更新旧表名到新表。</p>
@@ -167,7 +169,7 @@
 <ul>
 <li>使用方法</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE VIEW CustomerNew AS SELECT * FROM Coustomer</div></pre></td></tr></table></figure>  
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE VIEW CustomerNew AS SELECT * FROM Coustomer</span><br></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -196,7 +198,7 @@
 	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	<a class="jiathis_counter_style"></a>
 </div>
-<script type="text/javascript" >
+<script type="text/javascript">
     var jiathis_config={
     data_track_clickback:true,
     sm:"copy,renren,cqq",
@@ -220,9 +222,9 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
+ <div class="prev">
  <a href="/2016/09/14/Coding/2016-9笔记/2016-9笔记/" title="2016-9笔记">
-  <strong>上一篇：</strong><br/>
+  <strong>上一篇：</strong><br>
   <span>
   2016-9笔记</span>
 </a>
@@ -230,8 +232,8 @@
 
 
 <div class="next">
-<a href="/2016/09/03/2016/寻求改变，才是进步/寻求改变，才是进步/"  title="寻求改变，才是进步">
- <strong>下一篇：</strong><br/> 
+<a href="/2016/09/03/2016/寻求改变，才是进步/寻求改变，才是进步/" title="寻求改变，才是进步">
+ <strong>下一篇：</strong><br> 
  <span>寻求改变，才是进步
 </span>
 </a>
@@ -251,9 +253,9 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#从SELECT开始"><span class="toc-number">1.</span> <span class="toc-text">从SELECT开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#到INSERT了"><span class="toc-number">2.</span> <span class="toc-text">到INSERT了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#到更新语句了，UPDATE"><span class="toc-number">3.</span> <span class="toc-text">到更新语句了，UPDATE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更快就到了删除，DELETE语句，真的就只是介绍语法就好了"><span class="toc-number">4.</span> <span class="toc-text">更快就到了删除，DELETE语句，真的就只是介绍语法就好了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作表语句，CREATE-TABLE，ALERT-TABLE，DROP-TABLE"><span class="toc-number">5.</span> <span class="toc-text">操作表语句，CREATE TABLE，ALERT TABLE，DROP TABLE</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#视图"><span class="toc-number"></span> <span class="toc-text">视图</span></a>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#从SELECT开始"><span class="toc-number">1.</span> <span class="toc-text">从SELECT开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#到INSERT了"><span class="toc-number">2.</span> <span class="toc-text">到INSERT了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#到更新语句了，UPDATE"><span class="toc-number">3.</span> <span class="toc-text">到更新语句了，UPDATE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更快就到了删除，DELETE语句，真的就只是介绍语法就好了"><span class="toc-number">4.</span> <span class="toc-text">更快就到了删除，DELETE语句，真的就只是介绍语法就好了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作表语句，CREATE-TABLE，ALERT-TABLE，DROP-TABLE"><span class="toc-number">5.</span> <span class="toc-text">操作表语句，CREATE TABLE，ALERT TABLE，DROP TABLE</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#视图"><span class="toc-number"></span> <span class="toc-text">视图</span></a>
  
-  </div>
+  </li></div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -263,7 +265,7 @@
 <div class="github-card">
 <p class="asidetitle">Github 名片</p>
 <div class="github-card" data-github="Eric1235" data-width="220" data-height="119" data-theme="medium">
-<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 </div>
   </div>
 
@@ -301,11 +303,11 @@
 			
 		
 			
-				<li><a href="/tags/future/" title="future">future<sup>1</sup></a></li>
+				<li><a href="/tags/me/" title="me">me<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/me/" title="me">me<sup>1</sup></a></li>
+				<li><a href="/tags/sunshine/" title="sunshine">sunshine<sup>1</sup></a></li>
 			
 		
 			
@@ -313,7 +315,7 @@
 			
 		
 			
-				<li><a href="/tags/sunshine/" title="sunshine">sunshine<sup>1</sup></a></li>
+				<li><a href="/tags/future/" title="future">future<sup>1</sup></a></li>
 			
 		
 			
@@ -360,14 +362,14 @@
 
   <div class="weiboshow">
   <p class="asidetitle">新浪微博</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1634073622&verifier=43ce7f75&dpc=1"></iframe>
+    <iframe width="100%" height="119" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1634073622&verifier=43ce7f75&dpc=1"></iframe>
 </div>
 
 
 </aside>
 </div>
     </div>
-    <footer><div id="footer" >
+    <footer><div id="footer">
 	
 	<div class="line">
 		<span></span>
@@ -376,11 +378,11 @@
 	
 	
 	<section class="info">
-		<p> Be Fearless <br/>
+		<p> Be Fearless <br>
 			Be an Engineer</p>
 	</section>
 	 
-	<div class="social-font" class="clearfix">
+	<div class="social-font">
 		
 		<a href="http://weibo.com/1634073622" target="_blank" class="icon-weibo" title="微博"></a>
 		
@@ -559,7 +561,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	<a title="返回顶部"><img src="/img/scrollup.png"></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
